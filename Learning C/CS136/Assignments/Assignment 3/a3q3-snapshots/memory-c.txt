@@ -1,0 +1,26 @@
+main.c when line 25 is reached for the third time
+
+*************************
+GLOBAL VARIABLES
+  rogue:           0
+*************************
+GLOBAL CONSTANTS
+  bb:              3
+*************************
+STACK
+=========================
+poe:
+  c:               3
+  d:               6
+  r/a:       finn:43
+=========================
+finn:
+  a:               6
+  y:               3
+  z:             ???
+  r/a:       main:50
+=========================
+main:
+  x:             ???
+  r/a:            OS
+=========================

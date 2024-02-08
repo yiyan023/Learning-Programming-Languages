@@ -1,0 +1,21 @@
+main.c when line 45 is reached for the first time
+
+*************************
+GLOBAL VARIABLES
+  rogue:          -1
+*************************
+GLOBAL CONSTANTS
+  bb:              3
+*************************
+STACK
+=========================
+finn:
+  a:               6
+  y:               3
+  z:               6
+  r/a:       main:50
+=========================
+main:
+  x:             ???
+  r/a:            OS
+=========================
