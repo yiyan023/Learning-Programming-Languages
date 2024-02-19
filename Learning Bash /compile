@@ -1,0 +1,46 @@
+#!/bin/bash
+
+if [[ $# -lt 2 ]]; then
+    echo "Expected at least two arguments."
+    exit 5
+fi
+
+execFile=$1
+shift
+
+if [[ ${1##*\.} == "in" ]]; then
+    inFile=$1
+    shift
+fi
+
+if [[ ${1##*\.} == "args" ]]; then
+    argsFile=$1
+    shift
+fi
+
+cFiles=""
+
+while [[ ${1##*\.} == "c" || ${1##*\.} == "o" ]]; do
+    cFiles+="$1 "
+    shift
+done
+
+if [[ -z ${cFiles} ]]; then
+    echo "No .c or .o file to compile. Try again"
+    exit 5
+fi
+
+clang ${cFiles} "${@}" -o ${execFile}
+compile=$?
+
+if [ $compile -ne 0 ]; then
+    exit $compile
+fi
+
+if [[ ! -z ${inFile} ]] && [[ ! -z ${argsFile} ]]; then
+    ./${execFile} $(cat ${argsFile}) < ${inFile}
+elif [[ ! -z ${inFile} ]]; then
+    ./${execFile} < ${inFile}
+elif [[ ! -z ${argsFile} ]]; then
+    ./${execFile} $(cat ${argsFile})
+fi
