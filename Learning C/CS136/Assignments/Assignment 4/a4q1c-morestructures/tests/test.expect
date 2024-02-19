@@ -1,0 +1,26 @@
+Type a command: (r, p, o, t, e, q)
+Reading price list.
+Type a command: (r, p, o, t, e, q)
+Printing price list.
+Name: c Price: 50
+Name: h Price: 150
+Name: n Price: 225
+Name: f Price: 350
+Name: s Price: 25
+Type a command: (r, p, o, t, e, q)
+How many scoops in your ice cream order?
+Type a command: (r, p, o, t, e, q)
+Which topping would you like to add?
+Type a command: (r, p, o, t, e, q)
+Which topping would you like to add?
+Type a command: (r, p, o, t, e, q)
+Which topping would you like to add?
+Type a command: (r, p, o, t, e, q)
+Printing order:
+Scoops: 2 Price: 800
+Toppings: 
+Name: h Price: 150
+Name: f Price: 350
+Name: s Price: 25
+Total Price: 1325
+Type a command: (r, p, o, t, e, q)

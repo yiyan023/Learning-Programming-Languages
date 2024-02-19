@@ -1,0 +1,74 @@
+//TODO: move to school environment to include this
+//#include "cs136.h"
+#include "assert.h"
+#include "stdbool.h"
+#include "stdio.h"
+#include "topping.h"
+
+// INTENTIONALLY UNDOCUMENT AS THIS IS NOT STUDENT FACING
+
+const char INVALID_TOPPING = '\0';
+
+
+
+struct topping topping_init(void) {
+    struct topping new_topping = {INVALID_TOPPING,0};
+    return new_topping;
+}
+
+struct topping topping_make(char n, int p) {
+    assert((n >= 'a' && n <= 'z') || (n >= 'A' && n <= 'Z'));
+    assert(p >= 0);
+    struct topping new_topping;
+    new_topping.name = n;
+    new_topping.price = p;
+    return new_topping;
+}
+
+void topping_clone(struct topping *dest, const struct topping *src) {
+    dest->name = src->name;
+    dest->price = src->price;
+}
+
+bool topping_equals(const struct topping *t1, const struct topping *t2) {
+  if (t1->name == t2->name && t1->price == t2->price) {
+    return true;
+  }
+  return false;
+}
+
+char topping_name(const struct topping *t) {
+  return t->name;
+}
+
+void topping_price(const struct topping *t, int *pprice) {
+  *pprice = t->price;
+}
+
+bool read_topping(struct topping *t){
+    char n = 0;
+    scanf(" %c",&n);
+    if (! ( (n >= 'a' && n <= 'z') || (n >= 'A' && n <= 'Z')) ) {
+        //printf("DEBUG: was expecting a character a-zA-Z. Reading Topping Failed\n");
+        return false;
+    }
+    int price = -1;
+    scanf("%d",&price);
+    if (price < 0) {
+        //printf("DEBUG: Was expecting a non-negative integer. Reading Topping failed.\n");
+        return false;
+    }
+    t->name = n;
+    t->price = price;
+    return true;
+}
+
+void print_topping(const struct topping *t){
+    assert(t);
+    if ( (t->name >= 'a' && t->name <= 'z') || (t->name >= 'A' && t->name <= 'Z')) {
+        if ( t->price >= 0) {
+            printf("Name: %c Price: %d\n",t->name,t->price);
+        }
+    }
+}
+
