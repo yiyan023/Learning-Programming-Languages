@@ -7,10 +7,10 @@
 // your function documentation goes here
 int expt(int b, int n) {
   // your implementation goes here
-  if (n == 1) {
-    return b;
+  if (n == 0) {
+    return 1;
   } else {
-    return expt(b * b, n - 1);
+    return b * expt(b, n - 1);
   }
 }
 
