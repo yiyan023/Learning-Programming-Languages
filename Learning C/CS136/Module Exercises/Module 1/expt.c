@@ -1,4 +1,8 @@
-#include "cs136.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdbool.h>
+#include <assert.h>
 
 // your function documentation goes here
 int expt(int b, int n) {
